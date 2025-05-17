@@ -17,11 +17,13 @@ public class UnionArray {
         while(i<n && j<m){
 
             if(a[i] <= b[j]){
-                if(result.isEmpty() ||result.get(result.size()-1)!=a[i])result.add(a[i]);
+                if(result.isEmpty() ||result.get(result.size()-1)!=a[i])
+                    result.add(a[i]);
                 i++;
             }
             else{
-                if(result.isEmpty() ||result.get(result.size()-1)!=b[j])result.add(b[j]);
+                if(result.isEmpty() ||result.get(result.size()-1)!=b[j])
+                    result.add(b[j]);
                 j++;
             }
         }

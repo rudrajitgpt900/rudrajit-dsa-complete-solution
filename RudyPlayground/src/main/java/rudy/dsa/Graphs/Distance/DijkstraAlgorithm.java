@@ -14,7 +14,7 @@ public class DijkstraAlgorithm {
     public static List<Integer> dijkstra(int[][] edge,int vertices, int edges,int source){
         // Write your code here.
         List<List<PairDJ>> adj=new ArrayList<>();
-        Queue<PairDJ> pq=new PriorityQueue<>((x, y)->x.wt-y.wt);
+        Queue<PairDJ> pq=new PriorityQueue<>(Comparator.comparingInt(x -> x.wt));
         pq.add(new PairDJ(source,0));
         for(int i=0;i<vertices;i++){
             List<PairDJ> tem=new ArrayList<>();

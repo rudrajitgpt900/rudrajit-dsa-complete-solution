@@ -1,4 +1,4 @@
-package rudy.dsa.Graphs.Distance.DisjointSetDesign;
+package rudy.dsa.Graphs.DisjointSetDesign;
 
 public class MinOperationToConnectGraph {
 

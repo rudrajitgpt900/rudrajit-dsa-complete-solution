@@ -11,23 +11,21 @@ public class AlienDictionary {
             adj.add(new ArrayList<>());
         }
         int n = dictionary.length;
+        int[]indeg = new int[k];
         for(int i=0; i<n-1;i++){
             String s1 = dictionary[i];
             String s2 = dictionary[i+1];
             int len = Math.min(s1.length(),s2.length());
             for(int j =0; j<len;j++){
-                if(s1.charAt(j) != s2.charAt(j))
-                    adj.get(s1.charAt(j)-'a').add(s2.charAt(j) -'a');
+                if(s1.charAt(j) != s2.charAt(j)) {
+                    adj.get(s1.charAt(j) - 'a').add(s2.charAt(j) - 'a');
+                    indeg[s2.charAt(j) - 'a']++;
+                    break;
+                }
             }
         }
 
-        int[]indeg = new int[k];
-        for(int i=0;i<k;i++){
-            ArrayList<Integer> neighbours = adj.get(i);
-            for(Integer neighbour : neighbours){
-                indeg[neighbour]++;
-            }
-        }
+
         Queue<Integer>q = new LinkedList<>();
         List<Integer> topo = new ArrayList<>();
         for(int i =0; i<k;i++){
@@ -58,20 +56,20 @@ public class AlienDictionary {
 
 
 
-        String[] dict = {"ccacacc","babaaccb", "baacaaba","aaabcbaabb"};
+        String[] dict = {"baa","abcd","abca","cab","cad"};
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter dictionary: ");
-        int n = sc.nextInt();
-        String[]arr= new String[n];
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter dictionary: ");
+//        int n = sc.nextInt();
+//        String[]arr= new String[n];
+//
+//        for(int i=0;i<n;i++){
+//            System.out.println("Enter your alien words: ");
+//            String word = sc.nextLine();
+//            arr[i]=word;
+//        }
+//        sc.close();
 
-        for(int i=0;i<n;i++){
-            System.out.println("Enter your alien words: ");
-            String word = sc.nextLine();
-            arr[i]=word;
-        }
-        sc.close();
-
-        System.out.println(AlienDictionary.getAlienLanguage(arr , 3));
+        System.out.println(AlienDictionary.getAlienLanguage(dict , 4));
     }
 }

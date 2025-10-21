@@ -1,4 +1,4 @@
-package rudy.dsa.Graphs.Distance.DisjointSetDesign;
+package rudy.dsa.Graphs.DisjointSetDesign;
 
 import java.util.ArrayList;
 

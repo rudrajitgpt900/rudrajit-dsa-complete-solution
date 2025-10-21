@@ -23,4 +23,9 @@ public class CountAndSay {
         return sb.toString();
 
     }
+
+    public static void main(String[] args) {
+        CountAndSay andSay = new CountAndSay();
+        System.out.println(andSay.countAndSay(4));
+    }
 }
